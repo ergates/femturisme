@@ -1,0 +1,53 @@
+<html>
+<head>
+	
+	<!-- Import JQTouch default style (iPhone look).
+       Replace the string "themes/apple" with "themes/jq" for a non-iPhone theme -->
+    <link type="text/css" rel="stylesheet" media="screen" href="jqtouch/jqtouch.css">
+    <link type="text/css" rel="stylesheet" media="screen" href="css/theme.css">
+    
+    <script src="lib/iscroll.js"></script>
+    
+    <script src="js/lang/es_ES.js"></script>
+        	
+</head>
+<body>
+
+<script id="home-tpl" type="text/x-handlebars-template">
+	<div id="theform">
+    <div class="toolbar">
+      <h1>femTurisme</h1>
+    </div>
+    <ul class="rounded">
+	    <li><input type="text" placeholder="{{nom_ruta}}" name="ruta_nom" id="ruta_nom_input" autocapitalize="off" autocorrect="off" autocomplete="off"></li>
+	    <li class="arrow"><a id="submitButton">{{veure_rutes}}</a></li>
+	</ul>
+  </div>
+  <div class="scroll">  	
+  	<ul id="results_ul" class="rounded">{{resultats}}</ul>
+  </div>
+</script>
+
+<script id="rutes-li-tpl" type="text/x-handlebars-template">	
+    {{#each rutes}}
+    <li><a href="#rutes/{{param_url}}">{{name}}</a></li> 
+    {{/each}}
+</script>
+
+<script id="rutes-no-li-tpl" type="text/x-handlebars-template">    
+    <li>{{no_ruta_coincident}}</li>     
+</script>
+
+<script id="rutes-loading-li-tpl" type="text/x-handlebars-template">    
+    <li>{{loading}}</li>     
+</script>
+
+<script src="phonegap.js"></script>
+<script src="lib/jquery-1.8.2.min.js"></script>
+<script src="lib/handlebars.js"></script>
+<script src="js/data/site-femturis.js"></script>
+<script src="js/HomeView.js"></script>
+<script src="js/main.js"></script>
+			
+</body>
+</html>
